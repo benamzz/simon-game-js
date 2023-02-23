@@ -1,0 +1,28 @@
+header {
+    text-align: center;
+}
+
+h3 {
+    color: blue;
+}
+
+#redBtn {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+#blueBtn {
+    background-color: rgba(0, 0, 255, 1);
+}
+
+#yellowBtn {
+    background-color: rgba(255, 255, 0, 1);
+}
+
+#greenBtn {
+    background-color: rgba(0, 128, 0, 1);
+}
+
+.container button {
+    height: 100px;
+    width: 100px;
+}
