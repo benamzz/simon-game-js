@@ -26,4 +26,7 @@ class Display {
         this.levelH3.innerText = `Level : ${this.game.level}`
         this.sequenceLengthH3.innerText = `Sequence lenght : ${this.game.sequenceLength}`
     }
+
+
+
 }
