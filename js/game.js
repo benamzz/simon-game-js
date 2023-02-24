@@ -33,9 +33,14 @@ class Game {
             ++this.level
             ++this.sequenceLength
             this.gameResult = `You pass to the level${this.level}`
+            return true
         } else {
             this.gameResult = `You stay at the level${this.level}`
+            return false
         }
+    }
+    
+    restart(){
         this.botSequence = []
         this.playerSequence = []
         this.addBotSequence()

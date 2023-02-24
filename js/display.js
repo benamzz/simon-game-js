@@ -36,7 +36,12 @@ class Display {
                 }, 200);
                 if (this.game.playerSequence.length === this.game.sequenceLength) {
                     console.log('hello=>', this.game.playerSequence.length)
-                    this.game.verifySequences();
+                    if(this.game.verifySequences()){
+                        
+                    }
+                    this.game.restart()
+                    
+                    this.updateDisplay()
                 }
             })
         })
