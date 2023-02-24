@@ -7,7 +7,7 @@ class Game {
         this.botSequence = []; // Initialiser un tableau vide pour stocker la séquence de l'ordinateur
         this.playerSequence = []; // Initialiser un tableau vide pour stocker la séquence du player
         this.buttons = [blueBtn, greenBtn, redBtn, yellowBtn];
-        this.gameResult = false
+        this.gameResult
     }
 
     addBotSequence() {
@@ -19,33 +19,11 @@ class Game {
                 selectedBtn.style.opacity = '1';
             }, 800);
             ++count;
-            console.log(`selectedBtn => ${typeof selectedBtn.id}`);
-            this.botSequence.push(selectedBtn.id); // Ajouter l'id du bouton sélectionné à la fin du tableau btnSequence
+            this.botSequence.push(selectedBtn.id); // Ajouter l'id du bouton sélectionné à la fin du tableau botSequence
             if (count >= this.sequenceLength) {
                 clearInterval(intervalID);
             }
-            if (count === this.sequenceLength) {
-                console.log(`Sequence completed!`);
-                console.log(`botSequence => ${this.botSequence}`);
-            }
         }, 1000);
-    }
-    addPlayerSequence() {
-        this.buttons.map(btn => {
-            btn.addEventListener('click', () => {
-                this.playerSequence.push(btn.id)
-                btn.style.opacity = '0.3';
-                setTimeout(() => {
-                    btn.style.opacity = '1';
-                }, 200);
-                console.log(this.playerSequence)
-                console.log(`botSeq => ${this.botSequence} playerSeq => ${this.playerSequence}`)
-                if (this.playerSequence.length === this.sequenceLength) {
-                    this.verifySequences();
-                }
-            })
-        })
-        console.log(this.botSequence.length, this.playerSequence.length, this.sequenceLength)
     }
 
     verifySequences() {
@@ -54,12 +32,12 @@ class Game {
             ++this.point
             ++this.level
             ++this.sequenceLength
-            alert('you win !! press start to try next level')
+            this.gameResult = `You pass to the level${this.level}`
         } else {
-            console.log('you loose')
+            this.gameResult = `You stay at the level${this.level}`
         }
         this.botSequence = []
         this.playerSequence = []
-        console.log(`point ==> ${this.point}`)
+        this.addBotSequence()
     }
 }
