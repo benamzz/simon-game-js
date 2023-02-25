@@ -48,7 +48,7 @@ class Display {
         this.levelH3.innerText = `Level : ${this.game.level}`
         this.sequenceLengthH3.innerText = `Sequence lenght : ${this.game.sequenceLength}`
         if (this.game.gameResult) {
-            this.sequenceLengthH3.innerText = this.game.gameResult
+            this.result.innerText = this.game.gameResult
         }
         console.log('update display')
     }
