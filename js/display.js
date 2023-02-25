@@ -36,18 +36,14 @@ class Display {
                 }, 200);
                 if (this.game.playerSequence.length === this.game.sequenceLength) {
                     console.log('hello=>', this.game.playerSequence.length)
-                    if(this.game.verifySequences()){
-                        
-                    }
+                    this.game.verifySequences()
                     this.game.restart()
-                    
                     this.updateDisplay()
                 }
             })
         })
     }
     updateDisplay() {
-        console.log('hello=>', this.game.playerSequence.length)
         this.pointH2.innerText = `Point : ${this.game.point}`
         this.levelH3.innerText = `Level : ${this.game.level}`
         this.sequenceLengthH3.innerText = `Sequence lenght : ${this.game.sequenceLength}`

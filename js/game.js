@@ -27,11 +27,7 @@ class Game {
     }
 
     verifySequences() {
-        console.log('on verify !!!')
         if (this.botSequence.join() === this.playerSequence.join()) {
-            ++this.point
-            ++this.level
-            ++this.sequenceLength
             this.gameResult = `You pass to the level${this.level}`
             return true
         } else {
@@ -39,8 +35,13 @@ class Game {
             return false
         }
     }
-    
-    restart(){
+
+    restart() {
+        if (this.verifySequences()) {
+            this.point += this.sequenceLength
+            ++this.level
+            ++this.sequenceLength
+        }
         this.botSequence = []
         this.playerSequence = []
         this.addBotSequence()

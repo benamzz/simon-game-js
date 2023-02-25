@@ -1,10 +1,18 @@
-header {
-    text-align: center;
+* {
+    box-sizing: border-box;
 }
 
-h3 {
-    color: blue;
+main {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
 }
+
+header {
+    text-align: center;
+
+}
+
 
 #redBtn {
     background-color: rgba(255, 0, 0, 1);
@@ -22,7 +30,40 @@ h3 {
     background-color: rgba(0, 128, 0, 1);
 }
 
+.container {
+    margin: auto;
+    width: 210px;
+}
+
 .container button {
+    margin: 0;
     height: 100px;
     width: 100px;
+    border: 0;
+    padding: 0;
+}
+
+#startBtn {
+    height: 50px;
+    width: 100px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+}
+
+#redBtn {
+    border-top-left-radius: 100%;
+}
+
+#blueBtn {
+    border-top-right-radius: 100%;
+}
+
+#yellowBtn {
+    border-bottom-left-radius: 100%;
+}
+
+#greenBtn {
+    border-bottom-right-radius: 100%;
 }
